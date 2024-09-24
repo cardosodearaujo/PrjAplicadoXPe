@@ -1,0 +1,6 @@
+@XPe.PrjAplicado.Microsservicos_HostAddress = http://localhost:5171
+
+GET {{XPe.PrjAplicado.Microsservicos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
