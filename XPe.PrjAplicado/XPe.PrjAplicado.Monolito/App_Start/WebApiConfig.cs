@@ -19,6 +19,8 @@ namespace XPe.PrjAplicado.Monolito
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            SwaggerConfig.Register(config);
         }
     }
 }
