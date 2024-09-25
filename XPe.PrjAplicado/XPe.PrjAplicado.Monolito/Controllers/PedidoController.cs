@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 
-namespace XPe.PrjAplicado.Monolito.Controllers
+namespace XPe.PrjAplicado.Monolito.API.Controllers
 {
-    public class PedidosController: ApiController
+    public class PedidoController : ApiController
     {
     }
 }
