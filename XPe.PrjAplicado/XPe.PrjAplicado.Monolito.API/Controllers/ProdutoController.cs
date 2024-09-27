@@ -4,6 +4,7 @@ using XPe.PrjAplicado.Interop.Controllers;
 using XPe.PrjAplicado.Monolito.API.Controllers.Base;
 using XPe.PrjAplicado.Monolito.API.Entities;
 using XPe.PrjAplicado.Monolito.API.Services;
+using ApiControllerBase = XPe.PrjAplicado.Monolito.API.Controllers.Base.ApiControllerBase;
 
 namespace XPe.PrjAplicado.Monolito.API.Controllers
 {

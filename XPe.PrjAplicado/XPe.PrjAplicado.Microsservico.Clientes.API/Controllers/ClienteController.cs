@@ -1,41 +1,53 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using XPe.PrjAplicado.Interop.Controllers;
 using XPe.PrjAplicado.Interop.Entities;
-using XPe.PrjAplicado.Interop.Services;
+using XPe.PrjAplicado.Microsservico.Clientes.API.Services.Interfaces;
 
 namespace XPe.PrjAplicado.Microsservico.Clientes.API.Controllers
 {
     [Route("api/v1/cliente")]
-    public class ClienteController : ApiControllerBase, IMigrationController<ActionResult, Cliente, Guid>
+    public class ClienteController : ApiControllerBase, IMigrationController<IActionResult, Cliente, Guid>
     {
-        [HttpGet("{codigo}")]
-        public ActionResult Get(Guid codigo)
+        private readonly IClienteService _clienteService;
+
+        public ClienteController(IClienteService clienteService)
         {
-            throw new NotImplementedException();
+            _clienteService = clienteService;
+        }
+
+        [HttpGet("{codigo}")]
+        public IActionResult Get(Guid codigo)
+        {
+            var entidade = _clienteService.Obter(codigo);
+            return ProcessarRetorno(_clienteService.Mensagens, entidade);
         }
 
         [HttpGet]
-        public ActionResult Get()
+        public IActionResult Get()
         {
-            throw new NotImplementedException();
+            var entidade = _clienteService.ObterLista();
+            return ProcessarRetorno(_clienteService.Mensagens, entidade);
         }
 
         [HttpPost]
-        public ActionResult Post(Cliente entidade)
+        public IActionResult Post(Cliente entidade)
         {
-            throw new NotImplementedException();
+            _clienteService.Salvar(entidade);
+            return ProcessarRetorno(_clienteService.Mensagens);
         }
 
         [HttpPut]
-        public ActionResult Put(Guid codigo, Cliente entidade)
+        public IActionResult Put(Guid codigo, Cliente entidade)
         {
-            throw new NotImplementedException();
+            _clienteService.Atualizar(codigo, entidade);
+            return ProcessarRetorno(_clienteService.Mensagens);
         }
 
         [HttpDelete]
-        public ActionResult Delete(Guid codigo)
+        public IActionResult Delete(Guid codigo)
         {
-            throw new NotImplementedException();
+            _clienteService.Excluir(codigo);
+            return ProcessarRetorno(_clienteService.Mensagens);
         }
     }
 }

@@ -1,3 +1,6 @@
+using XPe.PrjAplicado.Microsservico.Clientes.API.Services;
+using XPe.PrjAplicado.Microsservico.Clientes.API.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IClienteService, ClienteService>();
 
 var app = builder.Build();
 

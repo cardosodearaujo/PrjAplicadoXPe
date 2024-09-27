@@ -1,40 +1,53 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using XPe.PrjAplicado.Interop.Controllers;
 using XPe.PrjAplicado.Interop.Entities;
-using XPe.PrjAplicado.Interop.Services;
+using XPe.PrjAplicado.Microsservico.Pedidos.API.Services.Interfaces;
 
 namespace XPe.PrjAplicado.Microsservico.Pedidos.API.Controllers
 {
     [Route("api/v1/pedido")]
-    public class PedidoController : ApiControllerBase, IMigrationController<ActionResult, Pedido, Guid>
+    public class PedidoController : ApiControllerBase, IMigrationController<IActionResult, Pedido, Guid>
     {
-        [HttpGet("{codigo}")]
-        public ActionResult Get(Guid codigo)
+        public IPedidoService _pedidoService { get; set; }
+
+        public PedidoController(IPedidoService pedidoService)
         {
-            throw new NotImplementedException();
+            _pedidoService = pedidoService;
+        }
+
+        [HttpGet("{codigo}")]
+        public IActionResult Get(Guid codigo)
+        {
+            var entidade = _pedidoService.Obter(codigo);
+            return ProcessarRetorno(_pedidoService.Mensagens, entidade);
         }
 
         [HttpGet]
-        public ActionResult Get()
+        public IActionResult Get()
         {
-            throw new NotImplementedException();
+            var lista = _pedidoService.ObterLista();
+            return ProcessarRetorno(_pedidoService.Mensagens, lista);
         }
 
         [HttpPost]
-        public ActionResult Post(Pedido entidade)
+        public IActionResult Post(Pedido entidade)
         {
-            throw new NotImplementedException();
+            _pedidoService.Salvar(entidade);
+            return ProcessarRetorno(_pedidoService.Mensagens);
         }
 
         [HttpPut]
-        public ActionResult Put(Guid codigo, Pedido entidade)
+        public IActionResult Put(Guid codigo, Pedido entidade)
         {
-            throw new NotImplementedException();
+            _pedidoService.Atualizar(codigo, entidade);
+            return ProcessarRetorno(_pedidoService.Mensagens);
         }
 
         [HttpDelete]
-        public ActionResult Delete(Guid codigo)
+        public IActionResult Delete(Guid codigo)
         {
-            throw new NotImplementedException();
+            _pedidoService.Excluir(codigo);
+            return ProcessarRetorno(_pedidoService.Mensagens);
         }
     }
 }

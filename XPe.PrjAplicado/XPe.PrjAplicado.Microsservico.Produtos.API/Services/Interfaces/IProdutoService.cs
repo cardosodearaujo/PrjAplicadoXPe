@@ -1,10 +1,10 @@
 ﻿using XPe.PrjAplicado.Interop.Entities;
+using XPe.PrjAplicado.Interop.Services.Interfaces;
 
 namespace XPe.PrjAplicado.Microsservico.Produtos.API.Services.Interfaces
 {
-    public interface IProdutoService
+    public interface IProdutoService: IServiceBase
     {
-        public List<string> Mensagens { get; set; }
 
         Produto Obter(Guid codigo);
 
