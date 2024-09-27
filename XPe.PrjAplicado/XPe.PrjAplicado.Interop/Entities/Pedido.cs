@@ -1,6 +1,6 @@
 ﻿namespace XPe.PrjAplicado.Interop.Entities
 {
-    public class PedidoBase
+    public class Pedido
     {
     }
 }

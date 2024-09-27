@@ -4,7 +4,7 @@ using System.Text;
 
 namespace XPe.PrjAplicado.Interop.Entities
 {
-    public class ClienteBase
+    public class Cliente
     {
     }
 }
