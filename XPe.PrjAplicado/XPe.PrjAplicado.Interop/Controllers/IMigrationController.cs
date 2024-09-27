@@ -1,4 +1,4 @@
-﻿namespace XPe.PrjAplicado.Interop.Services
+﻿namespace XPe.PrjAplicado.Interop.Controllers
 {
     public interface IMigrationController<TipoRetorno, TipoEntidade, TipoChave>
     {

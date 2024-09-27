@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\XPe.PrjAplicado.Interop.Comum\XPe.PrjAplicado.Interop.Comum.csproj" />
     <ProjectReference Include="..\XPe.PrjAplicado.Interop\XPe.PrjAplicado.Interop.csproj" />
   </ItemGroup>
 

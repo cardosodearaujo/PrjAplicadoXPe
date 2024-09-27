@@ -1,20 +1,20 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http;
 
-namespace XPe.PrjAplicado.Monolito.API.Controllers.Base
+namespace XPe.PrjAplicado.Interop.Controllers
 {
-    public class ControllerBase : ApiController
+    public class ApiControllerBase : ControllerBase
     {
         public List<string> Mensagens { get; set; }
 
-        public ControllerBase()
+        public ApiControllerBase()
         {
             Mensagens = new List<string>();
         }
 
-        protected IHttpActionResult ProcessarRetorno(List<string> mensagens, dynamic retorno = null)
+        protected IActionResult ProcessarRetorno(List<string> mensagens, dynamic retorno = null)
         {
             if (!mensagens.Any())
             {

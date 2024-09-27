@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPe.PrjAplicado.Interop", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPe.PrjAplicado.Monolito.API", "XPe.PrjAplicado.Monolito.API\XPe.PrjAplicado.Monolito.API.csproj", "{21A63BA6-6EE8-4E31-BAC8-F2F32B94EBE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPe.PrjAplicado.Interop.Comum", "XPe.PrjAplicado.Interop.Comum\XPe.PrjAplicado.Interop.Comum.csproj", "{4AE66D1C-0A16-46C4-B854-2ED0C55AE0D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{21A63BA6-6EE8-4E31-BAC8-F2F32B94EBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21A63BA6-6EE8-4E31-BAC8-F2F32B94EBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21A63BA6-6EE8-4E31-BAC8-F2F32B94EBE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE66D1C-0A16-46C4-B854-2ED0C55AE0D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE66D1C-0A16-46C4-B854-2ED0C55AE0D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE66D1C-0A16-46C4-B854-2ED0C55AE0D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE66D1C-0A16-46C4-B854-2ED0C55AE0D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

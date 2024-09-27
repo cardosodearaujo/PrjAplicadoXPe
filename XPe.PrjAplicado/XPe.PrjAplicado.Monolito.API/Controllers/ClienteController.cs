@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web.Http;
+using XPe.PrjAplicado.Interop.Controllers;
+using XPe.PrjAplicado.Monolito.API.Controllers.Base;
 using XPe.PrjAplicado.Monolito.API.Entities;
 using XPe.PrjAplicado.Monolito.API.Services;
 
 namespace XPe.PrjAplicado.Monolito.API.Controllers
 {
     [Route("api/v1/cliente")]
-    public class ClienteController : ApiController
+    public class ClienteController : ApiControllerBase, IMigrationController<IHttpActionResult, Cliente, Guid>
     {
         private readonly ClienteService _clienteService;
 
@@ -18,38 +19,43 @@ namespace XPe.PrjAplicado.Monolito.API.Controllers
         
         //Obtém o cliente pelo código
         [HttpGet]
-        public IList<Cliente> Get()
+        public IHttpActionResult Get()
         {
-            return _clienteService.ObterLista();
+            var lista = _clienteService.ObterLista();
+            return ProcessarRetorno(_clienteService.Mensagens, lista);
         }
 
         //Obtém todos os clientes   
         [HttpGet]
         [Route("api/v1/cliente/{codigo}")]
-        public Cliente Get(Guid codigo)
+        public IHttpActionResult Get(Guid codigo)
         {
-            return _clienteService.Obter(codigo);
+            var entidade = _clienteService.Obter(codigo);
+            return ProcessarRetorno(_clienteService.Mensagens, entidade);
         }
 
         //Salva um cliente
         [HttpPost]
-        public void Post([FromBody] Cliente entidade)
+        public IHttpActionResult Post([FromBody] Cliente entidade)
         {
             _clienteService.Salvar(entidade);
+            return ProcessarRetorno(_clienteService.Mensagens);
         }
 
         //Atualiza um cliente
         [HttpPut]
-        public void Put(Guid codigo, [FromBody] Cliente entidade)
+        public IHttpActionResult Put(Guid codigo, [FromBody] Cliente entidade)
         {
             _clienteService.Atualizar(codigo, entidade);
+            return ProcessarRetorno(_clienteService.Mensagens);
         }
 
         //Exclui um cliente pelo código
         [HttpDelete]
-        public void Delete(Guid codigo)
+        public IHttpActionResult Delete(Guid codigo)
         {
             _clienteService.Excluir(codigo);
+            return ProcessarRetorno(_clienteService.Mensagens);
         }
     }
 }
