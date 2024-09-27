@@ -167,7 +167,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\XPe.PrjAplicado.Interop\XPe.PrjAplicado.Interop.csproj">
+      <Project>{73787c99-08aa-4b62-a604-e6f412b8ec8f}</Project>
+      <Name>XPe.PrjAplicado.Interop</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

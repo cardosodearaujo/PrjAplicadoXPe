@@ -15,7 +15,7 @@ namespace XPe.PrjAplicado.Monolito
                 .EnableSwagger(c =>
                     {
                         
-                        c.SingleApiVersion("v1", "APIs Monolito");
+                        c.SingleApiVersion("v1", "XPe.PrjAplicado.Monolito.API");
 
                         
                     })
