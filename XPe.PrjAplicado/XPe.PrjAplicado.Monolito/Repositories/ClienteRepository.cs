@@ -26,19 +26,24 @@ namespace XPe.PrjAplicado.Monolito.API.Repositories
             return Clientes.ToList();
         }
 
-        public void Salvar(Cliente cliente)
+        public void Salvar(Cliente entidade)
         {
-            Clientes.Add(cliente);
+            Clientes.Add(entidade);
         }
 
-        public void Atualizar(Guid codigo, Cliente cliente)
+        public void Atualizar(Guid codigo, Cliente entidade)
         {
-            var entidade = Clientes.FirstOrDefault(C => C.Codigo == codigo);
+            var registro = Clientes.FirstOrDefault(C => C.Codigo == codigo);
 
             if (entidade != null)
-                entidade = cliente;
-            else 
+            {
+                Clientes.Remove(registro);
+                Clientes.Add(entidade);
+            }
+            else
+            {
                 throw new Exception("Dados não encontrados!");
+            }                
         }
 
         public void Excluir(Guid codigo)
@@ -46,9 +51,13 @@ namespace XPe.PrjAplicado.Monolito.API.Repositories
             var entidade = Obter(codigo);
 
             if (entidade != null)
+            {
                 Clientes.Remove(entidade);
+            }                
             else
+            {
                 throw new Exception("Dados não encontrados!");
+            }
         }
     }
 }
