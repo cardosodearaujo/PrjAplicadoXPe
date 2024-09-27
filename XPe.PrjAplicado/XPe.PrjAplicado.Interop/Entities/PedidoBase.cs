@@ -1,4 +1,4 @@
-﻿namespace XPe.PrjAplicado.Interoperabilidade.Entities
+﻿namespace XPe.PrjAplicado.Interop.Entities
 {
     public class PedidoBase
     {

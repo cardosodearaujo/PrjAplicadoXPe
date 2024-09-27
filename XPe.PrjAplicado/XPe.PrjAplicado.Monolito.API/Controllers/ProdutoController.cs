@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
 using System.Web.Http;
+using XPe.PrjAplicado.Interop.Services;
+using XPe.PrjAplicado.Monolito.API.Controllers.Base;
 using XPe.PrjAplicado.Monolito.API.Entities;
 using XPe.PrjAplicado.Monolito.API.Services;
 
 namespace XPe.PrjAplicado.Monolito.API.Controllers
 {
     [Route("api/v1/produto")]
-    public class ProdutoController : ApiController
+    public class ProdutoController : ControllerBase, IMigrationController<IHttpActionResult, Produto, Guid>
     {
         private readonly ProdutoService _produtoService;
 
@@ -18,38 +19,43 @@ namespace XPe.PrjAplicado.Monolito.API.Controllers
 
         //Obtém o produto pelo código
         [HttpGet]
-        public IList<Produto> Get()
+        public IHttpActionResult Get()
         {
-            return _produtoService.ObterLista();
+            var lista = _produtoService.ObterLista();
+            return ProcessarRetorno(_produtoService.Mensagens, lista);
         }
 
         //Obtém todos os produtos 
         [HttpGet]
         [Route("api/v1/produto/{codigo}")]
-        public Produto Get(Guid codigo)
+        public IHttpActionResult Get(Guid codigo)
         {
-            return _produtoService.Obter(codigo);
+            var entidade = _produtoService.Obter(codigo);
+            return ProcessarRetorno(_produtoService.Mensagens, entidade);
         }
 
         //Salva um produto
         [HttpPost]
-        public void Post([FromBody] Produto entidade)
+        public IHttpActionResult Post([FromBody] Produto entidade)
         {
             _produtoService.Salvar(entidade);
+            return ProcessarRetorno(_produtoService.Mensagens);
         }
 
         //Atualiza um produto
         [HttpPut]
-        public void Put(Guid codigo, [FromBody] Produto entidade)
+        public IHttpActionResult Put(Guid codigo, [FromBody] Produto entidade)
         {
             _produtoService.Atualizar(codigo, entidade);
+            return ProcessarRetorno(_produtoService.Mensagens);
         }
 
         //Exclui um produto pelo código
         [HttpDelete]
-        public void Delete(Guid codigo)
+        public IHttpActionResult Delete(Guid codigo)
         {
             _produtoService.Excluir(codigo);
+            return ProcessarRetorno(_produtoService.Mensagens);
         }
     }
 }
