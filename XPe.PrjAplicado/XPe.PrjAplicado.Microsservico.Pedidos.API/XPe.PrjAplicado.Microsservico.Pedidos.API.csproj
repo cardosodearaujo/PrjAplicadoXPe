@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,6 +8,15 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XPe.PrjAplicado.Comum\XPe.PrjAplicado.Comum.csproj" />
+    <ProjectReference Include="..\XPe.PrjAplicado.Interoperabilidade\XPe.PrjAplicado.Interoperabilidade.csproj" />
   </ItemGroup>
 
 </Project>
