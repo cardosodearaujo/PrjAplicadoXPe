@@ -1,0 +1,6 @@
+@XPe.PrjAplicado.Microsservico.Produtos.API_HostAddress = http://localhost:5207
+
+GET {{XPe.PrjAplicado.Microsservico.Produtos.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
