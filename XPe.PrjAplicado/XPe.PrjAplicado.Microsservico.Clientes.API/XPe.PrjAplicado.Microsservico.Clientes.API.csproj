@@ -14,9 +14,4 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\XPe.PrjAplicado.Comum\XPe.PrjAplicado.Comum.csproj" />
-    <ProjectReference Include="..\XPe.PrjAplicado.Interoperabilidade\XPe.PrjAplicado.Interoperabilidade.csproj" />
-  </ItemGroup>
-
 </Project>

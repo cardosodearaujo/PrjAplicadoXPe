@@ -5,15 +5,11 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPe.PrjAplicado.Monolito.API", "XPe.PrjAplicado.Monolito\XPe.PrjAplicado.Monolito.API.csproj", "{21A63BA6-6EE8-4E31-BAC8-F2F32B94EBE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPe.PrjAplicado.Interoperabilidade", "XPe.PrjAplicado.Interoperabilidade\XPe.PrjAplicado.Interoperabilidade.csproj", "{96609640-2942-403B-BBA9-15893CB7AF9B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPe.PrjAplicado.Microsservico.Produtos.API", "XPe.PrjAplicado.Microsservico.Produtos.API\XPe.PrjAplicado.Microsservico.Produtos.API.csproj", "{B30E6121-DEBC-48C6-A586-00C5A4E6078B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPe.PrjAplicado.Microsservico.Clientes.API", "XPe.PrjAplicado.Microsservico.Clientes.API\XPe.PrjAplicado.Microsservico.Clientes.API.csproj", "{08DE55BE-E12F-4022-841C-9CD493839DC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPe.PrjAplicado.Microsservico.Pedidos.API", "XPe.PrjAplicado.Microsservico.Pedidos.API\XPe.PrjAplicado.Microsservico.Pedidos.API.csproj", "{2445D209-4EC2-414E-B3A5-4671ECF8EEDF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPe.PrjAplicado.Comum", "XPe.PrjAplicado.Comum\XPe.PrjAplicado.Comum.csproj", "{EB9BC80F-5A20-4DA0-BAC1-F347D26711C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +21,6 @@ Global
 		{21A63BA6-6EE8-4E31-BAC8-F2F32B94EBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21A63BA6-6EE8-4E31-BAC8-F2F32B94EBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21A63BA6-6EE8-4E31-BAC8-F2F32B94EBE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96609640-2942-403B-BBA9-15893CB7AF9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96609640-2942-403B-BBA9-15893CB7AF9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96609640-2942-403B-BBA9-15893CB7AF9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96609640-2942-403B-BBA9-15893CB7AF9B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B30E6121-DEBC-48C6-A586-00C5A4E6078B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B30E6121-DEBC-48C6-A586-00C5A4E6078B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B30E6121-DEBC-48C6-A586-00C5A4E6078B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,10 +33,6 @@ Global
 		{2445D209-4EC2-414E-B3A5-4671ECF8EEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2445D209-4EC2-414E-B3A5-4671ECF8EEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2445D209-4EC2-414E-B3A5-4671ECF8EEDF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB9BC80F-5A20-4DA0-BAC1-F347D26711C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB9BC80F-5A20-4DA0-BAC1-F347D26711C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB9BC80F-5A20-4DA0-BAC1-F347D26711C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB9BC80F-5A20-4DA0-BAC1-F347D26711C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -171,12 +171,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\XPe.PrjAplicado.Interoperabilidade\XPe.PrjAplicado.Interoperabilidade.csproj">
-      <Project>{96609640-2942-403b-bba9-15893cb7af9b}</Project>
-      <Name>XPe.PrjAplicado.Interoperabilidade</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
