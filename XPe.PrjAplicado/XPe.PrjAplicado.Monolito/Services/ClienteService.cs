@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using XPe.PrjAplicado.Monolito.API.Entities;
 using XPe.PrjAplicado.Monolito.API.Repositories;
+using XPe.PrjAplicado.Monolito.API.Services.Base;
 
 namespace XPe.PrjAplicado.Monolito.API.Services
 {
-    public class ClienteService
+    public class ClienteService : ServiceBase
     {
         private readonly ClienteRepository _clienteRepository;
 
@@ -26,12 +27,18 @@ namespace XPe.PrjAplicado.Monolito.API.Services
         
         public void Salvar(Cliente entidade)
         {
-            _clienteRepository.Salvar(entidade);
+            if (entidade.EhValido())
+                _clienteRepository.Salvar(entidade);
+
+            Mensagens.AddRange(entidade.Mensagens);
         }
         
         public void Atualizar(Guid codigo, Cliente entidade)
         {
-            _clienteRepository.Atualizar(codigo, entidade);
+            if (entidade.EhValido())
+                _clienteRepository.Atualizar(codigo, entidade);
+
+            Mensagens.AddRange(entidade.Mensagens);
         }
 
         public void Excluir(Guid codigo)

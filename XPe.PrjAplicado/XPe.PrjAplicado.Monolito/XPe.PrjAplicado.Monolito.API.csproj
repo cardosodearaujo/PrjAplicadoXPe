@@ -133,9 +133,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Base\ControllerBase.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Entities\Base\EntityBase.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Pedido.cs" />
     <Compile Include="Entities\PedidoItem.cs" />
@@ -149,6 +151,7 @@
     <Compile Include="Repositories\DbContext\FakePrjAplicadoDbContext.cs" />
     <Compile Include="Repositories\PedidoRepository.cs" />
     <Compile Include="Repositories\ProdutoRepository.cs" />
+    <Compile Include="Services\Base\ServiceBase.cs" />
     <Compile Include="Services\ClienteService.cs" />
     <Compile Include="Services\PedidoService.cs" />
     <Compile Include="Services\ProdutoService.cs" />
