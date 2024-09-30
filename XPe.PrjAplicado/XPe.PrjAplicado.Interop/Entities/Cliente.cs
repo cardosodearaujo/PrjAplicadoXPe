@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace XPe.PrjAplicado.Interoperabilidade.Entities
+namespace XPe.PrjAplicado.Interop.Entities
 {
-    public class ClienteBase
+    public class Cliente
     {
     }
 }

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Web.Http;
-using XPe.PrjAplicado.Monolito.API.Controllers.Base;
+using XPe.PrjAplicado.Interop.Controllers;
 using XPe.PrjAplicado.Monolito.API.Entities;
 using XPe.PrjAplicado.Monolito.API.Services;
+using ApiControllerBase = XPe.PrjAplicado.Monolito.API.Controllers.Base.ApiControllerBase;
 
 namespace XPe.PrjAplicado.Monolito.API.Controllers
 {
-    public class PedidoController : ControllerBase
+    public class PedidoController : ApiControllerBase, IMigrationController<IHttpActionResult, Pedido, Guid>
     {
         private readonly PedidoService _pedidoService;
 

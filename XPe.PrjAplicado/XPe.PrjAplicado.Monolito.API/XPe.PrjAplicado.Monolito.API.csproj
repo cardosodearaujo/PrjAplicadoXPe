@@ -133,7 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Base\ControllerBase.cs" />
+    <Compile Include="Controllers\Base\ApiControllerBase.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
