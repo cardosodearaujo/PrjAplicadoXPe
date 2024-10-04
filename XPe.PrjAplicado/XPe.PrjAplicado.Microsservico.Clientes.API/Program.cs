@@ -1,3 +1,5 @@
+using XPe.PrjAplicado.Microsservico.Clientes.API.Repositories;
+using XPe.PrjAplicado.Microsservico.Clientes.API.Repositories.Interfaces;
 using XPe.PrjAplicado.Microsservico.Clientes.API.Services;
 using XPe.PrjAplicado.Microsservico.Clientes.API.Services.Interfaces;
 
@@ -11,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
 var app = builder.Build();
 

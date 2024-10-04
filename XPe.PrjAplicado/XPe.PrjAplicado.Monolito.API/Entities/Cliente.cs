@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using XPe.PrjAplicado.Monolito.API.Entities.Base;
-using XPe.PrjAplicado.Monolito.API.Enumerators;
+using XPe.PrjAplicado.Monolito.API.Entities.Enumetators;
 
 namespace XPe.PrjAplicado.Monolito.API.Entities
 {

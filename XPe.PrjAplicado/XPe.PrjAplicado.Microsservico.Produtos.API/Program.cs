@@ -1,3 +1,5 @@
+using XPe.PrjAplicado.Microsservico.Produtos.API.Repositories;
+using XPe.PrjAplicado.Microsservico.Produtos.API.Repositories.Interfaces;
 using XPe.PrjAplicado.Microsservico.Produtos.API.Services;
 using XPe.PrjAplicado.Microsservico.Produtos.API.Services.Interfaces;
 
@@ -11,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProdutoService, ProdutoService>();
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 var app = builder.Build();
 

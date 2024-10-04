@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace XPe.PrjAplicado.Monolito.API.Entities.Base
+namespace XPe.PrjAplicado.Interop.Entities.Base
 {
     public abstract class EntityBase
     {
