@@ -1,5 +1,4 @@
-using XPe.PrjAplicado.Microsservico.Pedidos.API.Services;
-using XPe.PrjAplicado.Microsservico.Pedidos.API.Services.Interfaces;
+using XPe.PrjAplicado.Microsservico.Pedidos.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IPedidoService, PedidoService>();
+builder.Services.InjetarDependencias();
 
 var app = builder.Build();
 

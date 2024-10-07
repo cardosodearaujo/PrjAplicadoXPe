@@ -1,7 +1,4 @@
-using XPe.PrjAplicado.Microsservico.Produtos.API.Repositories;
-using XPe.PrjAplicado.Microsservico.Produtos.API.Repositories.Interfaces;
-using XPe.PrjAplicado.Microsservico.Produtos.API.Services;
-using XPe.PrjAplicado.Microsservico.Produtos.API.Services.Interfaces;
+using XPe.PrjAplicado.Microsservico.Produtos.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IProdutoService, ProdutoService>();
-builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+builder.Services.InjetarDependencias();
 
 var app = builder.Build();
 
