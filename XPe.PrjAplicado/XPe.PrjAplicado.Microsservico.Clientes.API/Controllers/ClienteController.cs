@@ -30,14 +30,14 @@ namespace XPe.PrjAplicado.Microsservico.Clientes.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Cliente entidade)
+        public IActionResult Post([FromBody] Cliente entidade)
         {
             _clienteService.Salvar(entidade);
             return ProcessarRetorno(_clienteService.Mensagens);
         }
 
         [HttpPut]
-        public IActionResult Put(Guid codigo, Cliente entidade)
+        public IActionResult Put(Guid codigo, [FromBody] Cliente entidade)
         {
             _clienteService.Atualizar(codigo, entidade);
             return ProcessarRetorno(_clienteService.Mensagens);
