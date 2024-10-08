@@ -28,7 +28,7 @@ namespace XPe.PrjAplicado.Microsservico.Clientes.API.Services
         {
             var entidade = new Cliente { Codigo = codigo };
 
-            if (!entidade.CodigoEhValido())
+            if (entidade.CodigoEhValido())
                 _clienteRepository.Excluir(codigo);
 
             Mensagens.AddRange(entidade.Mensagens);

@@ -6,17 +6,13 @@ namespace XPe.PrjAplicado.Interop.Entities
 {
     public class Produto: EntityBase
     {
-        public Produto()
-        {
-            Codigo = Guid.NewGuid();
-        }
-
         public Guid Codigo { get; set; }
         public string Nome { get; set; }
         public decimal Valor { get; set; }
 
         public override bool EhValido()
         {
+            CodigoEhValido();
             NomeEhValido();
             ValorEhValido();
             return !Mensagens.Any();

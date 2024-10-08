@@ -6,11 +6,6 @@ namespace XPe.PrjAplicado.Interop.Entities
 {
     public class PedidoItem: EntityBase
     {
-        public PedidoItem()
-        {
-            CodigoItem = Guid.NewGuid();
-        }
-
         public Guid CodigoPedido { get; set; }
         public Guid CodigoItem { get; set; }
         public Guid CodigoProduto { get; set; }
@@ -20,6 +15,8 @@ namespace XPe.PrjAplicado.Interop.Entities
 
         public override bool EhValido()
         {
+            CodigoPedidoEhValido();
+            CodigoItemEhValido();
             CodigoProdutoEhValido();
             ValorUnitarioEhValido();
             QuantidadeEhValido();

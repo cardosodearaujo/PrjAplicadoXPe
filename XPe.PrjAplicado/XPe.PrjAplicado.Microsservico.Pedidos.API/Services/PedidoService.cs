@@ -1,34 +1,62 @@
 ﻿using XPe.PrjAplicado.Interop.Entities;
 using XPe.PrjAplicado.Interop.Services;
+using XPe.PrjAplicado.Microsservico.Pedidos.API.Repositories.Interfaces;
 using XPe.PrjAplicado.Microsservico.Pedidos.API.Services.Interfaces;
 
 namespace XPe.PrjAplicado.Microsservico.Pedidos.API.Services
 {
     public class PedidoService : ServiceBase, IPedidoService
     {
-        public void Atualizar(Guid codigo, Pedido entidade)
-        {
-            throw new NotImplementedException();
-        }
+        private readonly IPedidoRepository _produtoRepository;
 
-        public void Excluir(Guid codigo)
+        public PedidoService(IPedidoRepository produtoRepository)
         {
-            throw new NotImplementedException();
+            _produtoRepository = produtoRepository;
         }
 
         public Pedido Obter(Guid codigo)
         {
-            throw new NotImplementedException();
+            var entidade = new Pedido { Codigo = codigo };
+
+            if (entidade.CodigoEhValido())
+                return _produtoRepository.Obter(codigo);
+
+            Mensagens.AddRange(entidade.Mensagens);
+
+            return null;
         }
 
         public IList<Pedido> ObterLista()
         {
-            throw new NotImplementedException();
+            return _produtoRepository.ObterLista();
         }
 
         public void Salvar(Pedido entidade)
         {
-            throw new NotImplementedException();
+            if (entidade.EhValido())
+                _produtoRepository.Salvar(entidade);
+
+            Mensagens.AddRange(entidade.Mensagens);
+        }
+
+        public void Atualizar(Guid codigo, Pedido entidade)
+        {
+            entidade.Codigo = codigo;
+
+            if (entidade.EhValido())
+                _produtoRepository.Atualizar(codigo, entidade);
+
+            Mensagens.AddRange(entidade.Mensagens);
+        }
+
+        public void Excluir(Guid codigo)
+        {
+            var entidade = new Pedido { Codigo = codigo };
+
+            if (entidade.CodigoEhValido())
+                _produtoRepository.Excluir(codigo);
+
+            Mensagens.AddRange(entidade.Mensagens);
         }
     }
 }

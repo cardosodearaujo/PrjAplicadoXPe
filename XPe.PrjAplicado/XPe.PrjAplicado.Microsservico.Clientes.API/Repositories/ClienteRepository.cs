@@ -14,6 +14,8 @@ namespace XPe.PrjAplicado.Microsservico.Clientes.API.Repositories
             }
         }
 
+        public List<string> Mensagens { get; set; }
+
         public Cliente Obter(Guid codigo)
         {
             return Clientes.FirstOrDefault(C => C.Codigo == codigo);

@@ -7,11 +7,6 @@ namespace XPe.PrjAplicado.Interop.Entities
 {
     public class Cliente : EntityBase
     {
-        public Cliente()
-        {
-            Codigo = Guid.NewGuid();
-        }
-
         public Guid Codigo { get; set; }
         public string Nome { get; set; }
         public TipoClienteEnum? TipoCliente { get; set; }
@@ -19,6 +14,7 @@ namespace XPe.PrjAplicado.Interop.Entities
 
         public override bool EhValido()
         {
+            CodigoEhValido();
             NomeEhValido();
             TipoClienteEhValido();
             CpfCnpjEhValido();

@@ -4,6 +4,7 @@ namespace XPe.PrjAplicado.Microsservico.Clientes.API.Repositories.Interfaces
 {
     public interface IClienteRepository
     {
+
         Cliente Obter(Guid codigo);
 
         IList<Cliente> ObterLista();

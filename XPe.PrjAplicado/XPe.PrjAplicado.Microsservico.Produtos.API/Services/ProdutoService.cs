@@ -53,7 +53,7 @@ namespace XPe.PrjAplicado.Microsservico.Produtos.API.Services
         {
             var entidade = new Produto { Codigo = codigo };
 
-            if (!entidade.CodigoEhValido())
+            if (entidade.CodigoEhValido())
                 _produtoRepository.Excluir(codigo);
 
             Mensagens.AddRange(entidade.Mensagens);
