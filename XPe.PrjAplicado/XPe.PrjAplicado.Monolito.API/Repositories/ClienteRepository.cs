@@ -1,44 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using XPe.PrjAplicado.Interop.Repositories;
 using XPe.PrjAplicado.Monolito.API.Entities;
-using XPe.PrjAplicado.Monolito.API.Repositories.DbContext;
 
 namespace XPe.PrjAplicado.Monolito.API.Repositories
 {
-    public class ClienteRepository
+    public class ClienteRepository : BaseRepository<Cliente>
     {
-        public IList<Cliente> Clientes
-        {
-            get 
-            { 
-                return FakePrjAplicadoDbContext.Clientes; 
-            }
+        public ClienteRepository(): base("clientes")
+        {            
         }
 
         public Cliente Obter(Guid codigo)
         {
-            return Clientes.FirstOrDefault(C => C.Codigo == codigo);
+            return Dados.FirstOrDefault(C => C.Codigo == codigo);
         }
 
         public IList<Cliente> ObterLista()
         {
-            return Clientes.ToList();
+            return Dados.ToList();
         }
 
         public void Salvar(Cliente entidade)
         {
-            Clientes.Add(entidade);
+            Dados.Add(entidade);
+            SaveChanges();
         }
 
         public void Atualizar(Guid codigo, Cliente entidade)
         {
-            var registro = Clientes.FirstOrDefault(C => C.Codigo == codigo);
+            var registro = Dados.FirstOrDefault(C => C.Codigo == codigo);
 
             if (entidade != null)
             {
-                Clientes.Remove(registro);
-                Clientes.Add(entidade);
+                Dados.Remove(registro);
+                Dados.Add(entidade);
+                SaveChanges();
             }
             else
             {
@@ -52,7 +50,8 @@ namespace XPe.PrjAplicado.Monolito.API.Repositories
 
             if (entidade != null)
             {
-                Clientes.Remove(entidade);
+                Dados.Remove(entidade);
+                SaveChanges();
             }                
             else
             {

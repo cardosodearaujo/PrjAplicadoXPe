@@ -5,7 +5,6 @@ namespace XPe.PrjAplicado.Microsservico.Produtos.API.Services.Interfaces
 {
     public interface IProdutoService: IServiceBase
     {
-
         Produto Obter(Guid codigo);
 
         IList<Produto> ObterLista();

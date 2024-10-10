@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Linq;
 using XPe.PrjAplicado.Monolito.API.Entities.Base;
-using XPe.PrjAplicado.Monolito.API.Enumerators;
+using XPe.PrjAplicado.Monolito.API.Entities.Enumetators;
 
 namespace XPe.PrjAplicado.Monolito.API.Entities
 {
     public class Cliente : EntityBase
     {
-        public Cliente()
-        {
-           Codigo = Guid.NewGuid();
-        }
-
         public Guid Codigo { get; set; }
         public string Nome { get; set; }
         public TipoClienteEnum? TipoCliente { get; set; }
@@ -19,6 +14,11 @@ namespace XPe.PrjAplicado.Monolito.API.Entities
 
         public override bool EhValido()
         {
+            if (Codigo == Guid.Empty)
+            {
+                Mensagens.Add("O codigo do cliente é obrigatório");
+            }
+
             if (string.IsNullOrEmpty(Nome))
             {
                 Mensagens.Add("O nome do cliente é obrigatório");

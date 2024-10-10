@@ -7,6 +7,7 @@ using ApiControllerBase = XPe.PrjAplicado.Monolito.API.Controllers.Base.ApiContr
 
 namespace XPe.PrjAplicado.Monolito.API.Controllers
 {
+    [Route("api/v1/pedido")]
     public class PedidoController : ApiControllerBase, IMigrationController<IHttpActionResult, Pedido, Guid>
     {
         private readonly PedidoService _pedidoService;
@@ -35,7 +36,7 @@ namespace XPe.PrjAplicado.Monolito.API.Controllers
 
         //Salva um pedido
         [HttpPost]
-        public IHttpActionResult Post([FromBody] Pedido entidade)
+        public IHttpActionResult Post(Pedido entidade)
         {
             _pedidoService.Salvar(entidade);
             return ProcessarRetorno(_pedidoService.Mensagens);            
@@ -43,7 +44,7 @@ namespace XPe.PrjAplicado.Monolito.API.Controllers
 
         //Atualiza um pedido
         [HttpPut]
-        public IHttpActionResult Put(Guid codigo, [FromBody] Pedido entidade)
+        public IHttpActionResult Put(Guid codigo, Pedido entidade)
         {
             _pedidoService.Atualizar(codigo, entidade);
             return ProcessarRetorno(_pedidoService.Mensagens);

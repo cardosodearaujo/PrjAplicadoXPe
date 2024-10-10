@@ -1,5 +1,4 @@
-using XPe.PrjAplicado.Microsservico.Clientes.API.Services;
-using XPe.PrjAplicado.Microsservico.Clientes.API.Services.Interfaces;
+using XPe.PrjAplicado.Microsservico.Clientes.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +9,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.InjetarDependencias();
+builder.Services.AddProblemDetails();
 
 var app = builder.Build();
 
@@ -26,5 +26,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseExceptionHandler();
 
 app.Run();

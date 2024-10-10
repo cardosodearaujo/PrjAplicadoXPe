@@ -1,4 +1,4 @@
-﻿namespace XPe.PrjAplicado.Monolito.API.Enumerators
+﻿namespace XPe.PrjAplicado.Monolito.API.Entities.Enumetators
 {
     public enum TipoClienteEnum
     {

@@ -6,17 +6,17 @@ namespace XPe.PrjAplicado.Monolito.API.Entities
 {
     public class Produto : EntityBase
     {
-        public Produto()
-        {
-            Codigo = Guid.NewGuid();    
-        }
-
         public Guid Codigo { get; set; }
         public string Nome { get; set; }
         public decimal Valor { get; set; }
 
         public override bool EhValido()
         {
+            if (Codigo == Guid.Empty)
+            {
+                Mensagens.Add("O código do produto é obrigatório");
+            }
+
             if (string.IsNullOrEmpty(Nome))
             {
                 Mensagens.Add("O nome do produto é obrigatório");

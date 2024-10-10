@@ -37,7 +37,7 @@ namespace XPe.PrjAplicado.Monolito.API.Controllers
 
         //Salva um produto
         [HttpPost]
-        public IHttpActionResult Post([FromBody] Produto entidade)
+        public IHttpActionResult Post(Produto entidade)
         {
             _produtoService.Salvar(entidade);
             return ProcessarRetorno(_produtoService.Mensagens);
@@ -45,7 +45,7 @@ namespace XPe.PrjAplicado.Monolito.API.Controllers
 
         //Atualiza um produto
         [HttpPut]
-        public IHttpActionResult Put(Guid codigo, [FromBody] Produto entidade)
+        public IHttpActionResult Put(Guid codigo, Produto entidade)
         {
             _produtoService.Atualizar(codigo, entidade);
             return ProcessarRetorno(_produtoService.Mensagens);

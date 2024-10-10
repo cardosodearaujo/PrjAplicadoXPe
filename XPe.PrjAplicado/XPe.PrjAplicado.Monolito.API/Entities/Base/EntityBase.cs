@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace XPe.PrjAplicado.Monolito.API.Entities.Base
 {
     public abstract class EntityBase
-    {
+    {   
         public List<string> Mensagens { get; set; }
 
         public EntityBase()

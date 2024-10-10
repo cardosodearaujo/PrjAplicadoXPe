@@ -35,6 +35,7 @@ namespace XPe.PrjAplicado.Monolito.API.Services
         
         public void Atualizar(Guid codigo, Cliente entidade)
         {
+            entidade.Codigo = codigo;
             if (entidade.EhValido())
                 _clienteRepository.Atualizar(codigo, entidade);
 

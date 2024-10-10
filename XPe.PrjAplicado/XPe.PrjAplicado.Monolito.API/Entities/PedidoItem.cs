@@ -6,10 +6,6 @@ namespace XPe.PrjAplicado.Monolito.API.Entities
 {
     public class PedidoItem : EntityBase
     {
-        public PedidoItem()
-        {
-           CodigoItem = Guid.NewGuid();
-        }
 
         public Guid CodigoPedido { get; set; }
         public Guid CodigoItem { get; set; }
@@ -20,6 +16,16 @@ namespace XPe.PrjAplicado.Monolito.API.Entities
 
         public override bool EhValido()
         {
+            if (CodigoPedido == Guid.Empty)
+            {
+                Mensagens.Add("O código do pedido é obrigatório!");
+            }
+
+            if (CodigoItem == Guid.Empty)
+            {
+                Mensagens.Add("O código do item é obrigatório!");
+            }
+
             if (CodigoProduto == Guid.Empty)
             {
                 Mensagens.Add("O código do cliente é obrigatório!");
