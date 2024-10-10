@@ -3,7 +3,7 @@
 namespace XPe.PrjAplicado.Monolito.API.Entities.Base
 {
     public abstract class EntityBase
-    {
+    {   
         public List<string> Mensagens { get; set; }
 
         public EntityBase()

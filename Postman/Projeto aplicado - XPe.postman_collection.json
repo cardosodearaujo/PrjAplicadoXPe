@@ -1,0 +1,490 @@
+{
+	"info": {
+		"_postman_id": "9a62c75c-dc3f-46bd-a9a6-498b05b4f9cb",
+		"name": "Projeto aplicado - XPe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1275023"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "/api/v1/produto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{PortaProduto}}}/api/v1/produto",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaProduto}}}",
+							"path": [
+								"api",
+								"v1",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/produto/{codigo}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{PortaProduto}}/api/v1/produto/46f25103-c891-4373-8234-73365e8317f1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaProduto}}",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								"46f25103-c891-4373-8234-73365e8317f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Codigo\": \"46f25103-c891-4373-8234-73365e8317f1\",\r\n  \"Nome\": \"Polo Hatch 1.6 2024/2025\",\r\n  \"Valor\": 87990.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{PortaProduto}}/api/v1/produto",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaProduto}}",
+							"path": [
+								"api",
+								"v1",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/produto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Nome\": \"Polo Hatch 1.6 2024/2025\",\r\n  \"Valor\": 87990.90\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{PortaProduto}}/api/v1/produto?codigo=46f25103-c891-4373-8234-73365e8317f1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaProduto}}",
+							"path": [
+								"api",
+								"v1",
+								"produto"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "46f25103-c891-4373-8234-73365e8317f1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/produto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "codigo",
+								"value": "46f25103-c891-4373-8234-73365e8317f1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:{{PortaProduto}}/api/v1/produto?codigo=46f25103-c891-4373-8234-73365e8317f1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaProduto}}",
+							"path": [
+								"api",
+								"v1",
+								"produto"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "46f25103-c891-4373-8234-73365e8317f1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "/api/v1/cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{PortaCliente}}/api/v1/cliente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaCliente}}",
+							"path": [
+								"api",
+								"v1",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/cliente/{codigo}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{PortaCliente}}/api/v1/cliente/46f25103-c891-4373-8234-73365e8317f1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaCliente}}",
+							"path": [
+								"api",
+								"v1",
+								"cliente",
+								"46f25103-c891-4373-8234-73365e8317f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Codigo\": \"46f25103-c891-4373-8234-73365e831722\",\r\n  \"Nome\": \"Everaldo Cardoso de Araújo\",\r\n  \"TipoCliente\": 0,\r\n  \"CpfCnpj\": \"14644293750\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{PortaCliente}}/api/v1/cliente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaCliente}}",
+							"path": [
+								"api",
+								"v1",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Nome\": \"Everaldo Cardoso de Araújo\",\r\n  \"TipoCliente\": 0,\r\n  \"CpfCnpj\": \"14644293750\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{PortaCliente}}/api/v1/cliente?codigo=46f25103-c891-4373-8234-73365e8317f1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaCliente}}",
+							"path": [
+								"api",
+								"v1",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "46f25103-c891-4373-8234-73365e8317f1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "codigo",
+								"value": "46f25103-c891-4373-8234-73365e8317f1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:{{PortaCliente}}/api/v1/cliente?codigo=46f25103-c891-4373-8234-73365e8317f1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaCliente}}",
+							"path": [
+								"api",
+								"v1",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "46f25103-c891-4373-8234-73365e8317f1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "/api/v1/pedido",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{PortaPedido}}}/api/v1/pedido",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaPedido}}}",
+							"path": [
+								"api",
+								"v1",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/pedido/{codigo}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{PortaPedido}}/api/v1/pedido/46f25103-c891-4373-8234-73365e8317f1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaPedido}}",
+							"path": [
+								"api",
+								"v1",
+								"pedido",
+								"46f25103-c891-4373-8234-73365e8317f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Codigo\": \"46f25103-c891-4373-8234-73365e8317f1\",\r\n  \"CodigoCliente\": \"46f25103-c891-4373-8234-73365e8317f1\",\r\n  \"Itens\": [\r\n    {\r\n        \"CodigoItem\": \"46f25103-c891-4373-8234-73365e8317f1\",\r\n        \"CodigoProduto\": \"46f25103-c891-4373-8234-73365e8317f1\",\r\n        \"ValorUnitario\": 32.50,\r\n        \"Quantidade\": 25\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{PortaPedido}}/api/v1/pedido",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaPedido}}",
+							"path": [
+								"api",
+								"v1",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/pedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Codigo\": \"46f25103-c891-4373-8234-73365e8317f1\",\r\n  \"CodigoCliente\": \"46f25103-c891-4373-8234-73365e8317f1\",\r\n  \"Itens\": [\r\n    {\r\n        \"CodigoItem\": \"46f25103-c891-4373-8234-73365e8317f1\",\r\n        \"CodigoProduto\": \"46f25103-c891-4373-8234-73365e8317f1\",\r\n        \"ValorUnitario\": 32.50,\r\n        \"Quantidade\": 25\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{PortaPedido}}/api/v1/pedido?codigo=46f25103-c891-4373-8234-73365e8317f1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaPedido}}",
+							"path": [
+								"api",
+								"v1",
+								"pedido"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "46f25103-c891-4373-8234-73365e8317f1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "codigo",
+								"value": "46f25103-c891-4373-8234-73365e8317f1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:{{PortaPedido}}/api/v1/pedido?codigo=46f25103-c891-4373-8234-73365e8317f1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PortaPedido}}",
+							"path": [
+								"api",
+								"v1",
+								"pedido"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "46f25103-c891-4373-8234-73365e8317f1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

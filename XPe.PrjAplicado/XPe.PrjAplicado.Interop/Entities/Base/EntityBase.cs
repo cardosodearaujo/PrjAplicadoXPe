@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace XPe.PrjAplicado.Interop.Entities.Base
 {

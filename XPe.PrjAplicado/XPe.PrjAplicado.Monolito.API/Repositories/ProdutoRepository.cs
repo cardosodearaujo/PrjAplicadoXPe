@@ -1,44 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using XPe.PrjAplicado.Interop.Repositories;
 using XPe.PrjAplicado.Monolito.API.Entities;
-using XPe.PrjAplicado.Monolito.API.Repositories.DbContext;
 
 namespace XPe.PrjAplicado.Monolito.API.Repositories
 {
-    public class ProdutoRepository
+    public class ProdutoRepository: BaseRepository<Produto>
     {
-        public IList<Produto> Produtos
+        public ProdutoRepository() : base("produtos")
         {
-            get
-            {
-                return FakePrjAplicadoDbContext.Produtos;
-            }
         }
 
         public Produto Obter(Guid codigo)
         {
-            return Produtos.FirstOrDefault(C => C.Codigo == codigo);
+            return Dados.FirstOrDefault(C => C.Codigo == codigo);
         }
 
         public IList<Produto> ObterLista()
         {
-            return Produtos.ToList();
+            return Dados.ToList();
         }
 
         public void Salvar(Produto entidade)
         {
-            Produtos.Add(entidade);
+            Dados.Add(entidade);
+            SaveChanges();
         }
 
         public void Atualizar(Guid codigo, Produto entidade)
         {
-            var registro = Produtos.FirstOrDefault(C => C.Codigo == codigo);
+            var registro = Dados.FirstOrDefault(C => C.Codigo == codigo);
 
             if (registro != null)
             {
-                Produtos.Remove(registro);
-                Produtos.Add(entidade);
+                Dados.Remove(registro);
+                Dados.Add(entidade);
+                SaveChanges();
             }
             else
             {
@@ -52,7 +50,8 @@ namespace XPe.PrjAplicado.Monolito.API.Repositories
 
             if (entidade != null)
             {
-                Produtos.Remove(entidade);
+                Dados.Remove(entidade);
+                SaveChanges();
             }
             else
             {

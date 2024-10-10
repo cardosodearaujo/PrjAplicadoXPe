@@ -1,44 +1,40 @@
 ﻿using XPe.PrjAplicado.Interop.Entities;
-using XPe.PrjAplicado.Microsservico.Clientes.API.Repositories.DbContext;
+using XPe.PrjAplicado.Interop.Repositories;
 using XPe.PrjAplicado.Microsservico.Clientes.API.Repositories.Interfaces;
 
 namespace XPe.PrjAplicado.Microsservico.Clientes.API.Repositories
 {
-    public class ClienteRepository : IClienteRepository
+    public class ClienteRepository : BaseRepository<Cliente>, IClienteRepository
     {
-        private IList<Cliente> Clientes
+        public ClienteRepository() : base("clientes")
         {
-            get
-            {
-                return FakeClienteDbContext.Clientes;
-            }
         }
-
-        public List<string> Mensagens { get; set; }
 
         public Cliente Obter(Guid codigo)
         {
-            return Clientes.FirstOrDefault(C => C.Codigo == codigo);
+            return Dados.FirstOrDefault(C => C.Codigo == codigo);
         }
 
         public IList<Cliente> ObterLista()
         {
-            return Clientes.ToList();
+            return Dados.ToList();
         }
 
         public void Salvar(Cliente entidade)
         {
-            Clientes.Add(entidade);
+            Dados.Add(entidade);
+            SaveChanges();
         }
 
         public void Atualizar(Guid codigo, Cliente entidade)
         {
-            var registro = Clientes.FirstOrDefault(C => C.Codigo == codigo);
+            var registro = Dados.FirstOrDefault(C => C.Codigo == codigo);
 
             if (entidade != null)
             {
-                Clientes.Remove(registro);
-                Clientes.Add(entidade);
+                Dados.Remove(registro);
+                Dados.Add(entidade);
+                SaveChanges();
             }
             else
             {
@@ -52,7 +48,8 @@ namespace XPe.PrjAplicado.Microsservico.Clientes.API.Repositories
 
             if (entidade != null)
             {
-                Clientes.Remove(entidade);
+                Dados.Remove(entidade);
+                SaveChanges();
             }
             else
             {
